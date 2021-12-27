@@ -22,15 +22,18 @@
       <form action="#" method="#" id="p-pb-signup" class="p-pb-form">
         <div class="p-pb-input">
           <input type="text" id="name-trainer" placeholder="Entrenador">
+          <span data-error='El campo "Entrenador" es invalido, asegurese de que ha escrito un nombre valido'><i class="fas fa-info"></i></span>
         </div>
         <div class="p-pb-input">
           <input type="email" id="email-trainer" placeholder="Correo Electronico">
+          <span data-error='Verifique que el correo contiene un valor valido, con un &commat;, y que finalice en un ".com"'><i class="fas fa-info"></i></span>
         </div>
         <div class="p-pb-input">
           <input type="password" id="pass-trainer" placeholder="Contraseña">
         </div>
         <div class="p-pb-input">
           <input type="password" id="pass-trainer-2" placeholder="Repetir Contraseña">
+          <span data-error="La contraseña debe inlcuir 8 caracteres, con 2 mayusculas, 1 caracter especial y 1 numero"><i class="fas fa-info"></i></span>
         </div>
         <div class="p-pb-input p-pb-button-group">
           <button id="btn-register" type="button" onclick="signup()">Registrarme</button>
@@ -47,6 +50,16 @@
         <a href="#" id="btn-login-overlay" class="p-pb-button active-button">Registrarse<i class="fas fa-chevron-right"></i></a>
       </div>
     </div>
+
+    <!--<aside style="display: none;">
+      <h1>Digite su correo electronico</h1>
+      <form id="restore">
+        <label for="correo-sesion">Correo</label>
+        <input type="email" name="correo" id="correo-recuperacion" placeholder="Correo">
+        <button id="btn-restore" type="button" onclick="recuperarContraseña()">Enviar</button><br>
+      </form>
+      <a style="color: #fff;" href="#" onclick="mostrarFormularioDeIngreso()">Iniciar Sesion</a>
+    </aside>-->
 
   </div>
 </section>
