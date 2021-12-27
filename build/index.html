@@ -1,1 +1,102 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Yuxi Global - Pokedex</title><link rel="stylesheet" href="css/main.css"><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"><script src="https://kit.fontawesome.com/f953dcffa0.js" crossorigin="anonymous"></script></head><body><!-- <main> --><!-- </main> --><header style="display: block;"><h1>Registro</h1><form id="register"><label for="nombre">Entrenador Pokemon</label> <input id="nombre" type="text" id="nombre"><br><label for="correo">Tu correo Electronico</label> <input id="correo" type="email" id="correo"><br><label for="password">Contraseña</label> <input id="password" type="password" id="contrasena"><br><label for="password2">Repite la contraseña</label> <input id="password2" type="password" id="contrasena2"><br><button id="btn-register" type="button" onclick="signup()">Registrarse</button><br></form><a style="color: #fff;" href="#" onclick="mostrarFormularioDeIngreso()">Ir al formulario de ingreso</a></header><main id="pokemon" style="display: none;"><p>Bienvenido <span></span>, te mostramos el pokemon de hoy</p><div id="pokemon-container"><div class="pokem"><h1><span></span></h1><div id="pokem-img-container"><img src="" alt=""></div><h2><span></span></h2><h3><span></span></h3></div></div><button type="button" onclick="cerrarSesion();">Cerrar Sesion</button></main><footer style="display: none;"><h1>Iniciar Sesion</h1><form id="login"><label for="correo-sesion">Correo</label> <input type="email" name="correo" id="correo-sesion" placeholder="Correo"><br><label for="password-sesion">Contraseña</label> <input type="password" name="contrasena" id="password-sesion" placeholder="Contraseña"><br><button id="btn-login" type="button" onclick="login()">Iniciar</button><br></form><a style="color: #fff;" href="#" onclick="mostrarFormularioDeRecuperacionDeContraseña()">Olvide Mi Contraseña</a><br><a style="color: #fff;" href="#" onclick="mostrarFormularioDeRegistro()">Ir al formulario de registro</a></footer><aside style="display: none;"><h1>Digite su correo electronico</h1><form id="restore"><label for="correo-sesion">Correo</label> <input type="email" name="correo" id="correo-recuperacion" placeholder="Correo"> <button id="btn-restore" type="button" onclick="recuperarContraseña()">Enviar</button><br></form><a style="color: #fff;" href="#" onclick="mostrarFormularioDeIngreso()">Iniciar Sesion</a></aside><a href="#" hidden></a><template id="temp"><div class="pokem"><h1><span></span></h1><img src="" alt="" crossorigin="anonymous"><h2><span></span></h2><h3><span></span></h3></div></template><script src="./app.js"></script><script src="js/chars.js"></script><script src="js/alert.js"></script><script src="js/fix-header.js"></script><script src="js/header-mobile.js"></script></body></html>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Pokedex App</title><link rel="stylesheet" href="css/main.css"><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"><link rel="shortcut icon" type="image/ico" href="./media/favicon/pokedex-favicon.ico"></head><body><main id="main-precharge"><section id="precharge" class="precharge-section p-ps try-catch"><div class="p-ps-container"><div class="p-ps-row bg-row"><div class="p-ps-vid"><video width="100%" height="100%" autoplay loop muted><source src="./media/video/poke-video-2.mp4" type="video/mp4"></video></div></div><div class="p-ps-row overlay-row"><div class="p-ps-img"><img src="./media/img/poke-icon.png" alt="Pokeball" title="pokeball-icon" class="p-ps-img_content"></div></div></div></section></main><!-- <header style="display: block;">
+      <h1>Registro</h1>
+      <form id="register">
+
+        <label for="nombre">Entrenador Pokemon</label>
+        <input id="nombre" type="text" id="nombre"><br>
+
+        <label for="correo">Tu correo Electronico</label>
+        <input id="correo" type="email" id="correo"><br>
+
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" id="contrasena"><br>
+
+        <label for="password2">Repite la contraseña</label>
+        <input id="password2" type="password" id="contrasena2"><br>
+
+        <button id="btn-register" type="button" onclick="signup()">Registrarse</button><br>
+
+      </form>
+
+      <a style="color: #fff;" href="#" onclick="mostrarFormularioDeIngreso()">Ir al formulario de ingreso</a>
+
+    </header>
+
+    <main id="pokemon" style="display: none;">
+      <p>Bienvenido <span></span>, te mostramos el pokemon de hoy</p>
+      <div id="pokemon-container">
+        <div class="pokem">
+          <h1>
+            <span ></span>
+          </h1>
+          <div id="pokem-img-container">
+            <img src="" alt="">
+          </div>
+          <h2>
+            <span ></span>
+          </h2>
+          <h3>
+            <span ></span>
+          </h3>
+        </div>
+      </div>
+      <button type="button" onclick="cerrarSesion();">Cerrar Sesion</button>
+    </main>
+
+    <footer style="display: none;">
+
+      <h1>Iniciar Sesion</h1>
+
+      <form id="login">
+
+        <label for="correo-sesion">Correo</label>
+        <input type="email" name="correo" id="correo-sesion" placeholder="Correo"><br>
+
+        <label for="password-sesion">Contraseña</label>
+        <input type="password" name="contrasena" id="password-sesion" placeholder="Contraseña"><br>
+
+        <button id="btn-login" type="button" onclick="login()">Iniciar</button><br>
+
+      </form>
+
+      <a style="color: #fff;" href="#" onclick="mostrarFormularioDeRecuperacionDeContraseña()">Olvide Mi Contraseña</a><br>
+      <a style="color: #fff;" href="#" onclick="mostrarFormularioDeRegistro()">Ir al formulario de registro</a>
+
+    </footer>
+
+    <aside style="display: none;">
+
+      <h1>Digite su correo electronico</h1>
+
+      <form id="restore">
+
+        <label for="correo-sesion">Correo</label>
+        <input type="email" name="correo" id="correo-recuperacion" placeholder="Correo">
+
+        <button id="btn-restore" type="button" onclick="recuperarContraseña()">Enviar</button><br>
+
+      </form>
+
+      <a style="color: #fff;" href="#" onclick="mostrarFormularioDeIngreso()">Iniciar Sesion</a>
+
+    </aside>
+
+    <a href="#" hidden></a>
+
+    <template id="temp">
+      <div class="pokem">
+        <h1>
+          <span ></span>
+        </h1>
+        <img src="" alt="" crossorigin="anonymous">
+        <h2>
+          <span ></span>
+        </h2>
+        <h3>
+          <span ></span>
+        </h3>
+      </div>
+    </template> --><script src="./js/app.js"></script><!-- <script src="js/chars.js"></script>
+      <script src="js/alert.js"></script>
+      <script src="js/fix-header.js"></script>
+      <script src="js/header-mobile.js"></script> --><script src="https://kit.fontawesome.com/f953dcffa0.js" crossorigin="anonymous"></script></body></html>

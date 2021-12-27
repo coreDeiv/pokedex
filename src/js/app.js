@@ -1,3 +1,13 @@
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelector('#precharge').classList.remove('try-catch');
+    document.querySelector('#precharge').classList.add('catched');
+  }, 3000);
+});
+
+
+
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 }
