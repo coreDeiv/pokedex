@@ -1,0 +1,26 @@
+<script>
+  "use-strict";
+
+  const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  const fetchPokemon = async () => {
+    try {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomInt(1, 150)}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  fetchPokemon().then(data => {
+    document.querySelector('#pokemon-container .p-pg-item_name').innerHTML = data.name;
+    document.querySelector('#pokemon-container .p-pg-item_sprite img').src = data.sprites.other.dream_world.front_default;
+    document.querySelector('#pokemon-container .p-pg-item_type').innerHTML = data.types.map(type => type.type.name).join(', ');
+    document.querySelector('#pokemon-container .p-pg-item_abilities').innerHTML = data.abilities.map(ability => `<li>${ability.ability.name}</li>`).join('');
+    console.log(data);
+  });
+  
+</script>
