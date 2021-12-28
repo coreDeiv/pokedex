@@ -8,6 +8,18 @@
   height: auto;
   opacity: 0;
   transition: ease .5s all;
+  @include mq(desk-xxl) {
+    width: 60%;
+  }
+  @include mq(desk-sm) {
+    width: 70%;
+  }
+  @include mq(tablet-md) {
+    width: 90%;
+  }
+  @include mq(tablet-sm) {
+    width: 95%;
+  }
   &.active {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
