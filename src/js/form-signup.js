@@ -66,7 +66,7 @@ function signup() {
   
   if (users.some(user => user.trainerEmail === email)) {    
     
-    alert('El usuario ya existe');
+    document.getElementById('modal-exisitingUser').classList.add('active');
     cleanFields();
     return false;
 
@@ -80,7 +80,7 @@ function signup() {
 
     localStorage.setItem('users', JSON.stringify(users));
 
-    alert('Registro exitoso');
+    document.getElementById('modal-registeredUser').classList.add('active');
 
     cleanFields();
 

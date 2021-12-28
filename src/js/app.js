@@ -88,7 +88,5 @@ function recuperarContraseña() {
   } else  {
     alert('La contraseña es: ' + JSON.parse(localStorage.getItem('usuarios'))[0].contrasena);
   }
-  document.querySelector('aside').style.display = 'none';
-  document.querySelector('header').style.display = 'none';
-  document.querySelector('footer').style.display = 'block';
+  
 }
