@@ -1,0 +1,124 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: rgba(0,0,0,.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  &.active {
+    display: flex;
+  }
+}
+
+#modal {
+  &-registeredUser {
+    .p-mru {
+      &-container {
+        @extend %modal-container;
+      }
+      &-row {
+        h1 {
+          font-size: 2rem;
+          font-weight: var(--p-font-bold);
+          color: var(--p-signup-color);
+          margin-bottom: 0;
+        }
+        p {
+          font-size: .9rem;
+          margin-bottom: 1rem;
+          font-weight: var(--p-font-semi-bold);
+        }
+        span {
+          font-weight: var(--p-font-thin);
+        }
+        a {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  &-exisitingUser {
+    .p-meu {
+      &-container {
+        @extend %modal-container;
+      }
+      &-row {
+        h1 {
+          font-size: 2rem;
+          font-weight: var(--p-font-bold);
+          color: var(--p-signup-color);
+          margin-bottom: 0;
+        }
+        p {
+          font-size: .9rem;
+          margin-bottom: 1rem;
+          font-weight: var(--p-font-semi-bold);
+        }
+        span {
+          font-weight: var(--p-font-thin);
+        }
+        a {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  &-wrongPassword {
+    .p-mwp {
+      &-container {
+        @extend %modal-container;
+      }
+      &-row {
+        h1 {
+          font-size: 2rem;
+          font-weight: var(--p-font-bold);
+          color: var(--p-signin-color);
+          margin-bottom: 0;
+        }
+        p {
+          font-size: .9rem;
+          margin-bottom: 1rem;
+          font-weight: var(--p-font-semi-bold);
+        }
+        span {
+          font-weight: var(--p-font-thin);
+        }
+        a {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  &-unexistAccount {
+    .p-mua {
+      &-container {
+        @extend %modal-container;
+      }
+      &-row {
+        h1 {
+          font-size: 2rem;
+          font-weight: var(--p-font-bold);
+          color: var(--p-signin-color);
+          margin-bottom: 0;
+        }
+        p {
+          font-size: .9rem;
+          margin-bottom: 1rem;
+          font-weight: var(--p-font-semi-bold);
+        }
+        span {
+          font-weight: var(--p-font-thin);
+        }
+        a {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

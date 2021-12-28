@@ -1,21 +1,27 @@
-// @each $key, $value in $colors {
-//   .btn {
-//     @extend %buttons;
-//   }
-//   .btn-#{$key} {
-//     background: $value;
-//     color: $white;
-//     &:hover {
-//       background: darken($value, 5%);
-//     }
-//   }
-//   button {
-//     border: 0px;
-//     cursor: pointer;
-//   }
-// }
+#btn-register-overlay:hover {
+  background-color: var(--p-signup-color-hover);
+  cursor: pointer;
+}
 
-/*
- Components
-  Modal
-*/
+#btn-login-overlay:hover {
+  background-color: var(--p-signin-color-hover);
+  cursor: pointer;
+}
+
+button {
+  @extend %buttons;
+}
+
+.p-btn {
+  @extend %buttons;
+  &-primary {
+    background-color: #fff;
+    color: var(--p-signup-color);
+    border-color: var(--p-signup-color);
+  }
+  &-secondary {
+    background-color: #fff;
+    color: var(--p-signin-color);
+    border-color: var(--p-signin-color);
+  }
+}
