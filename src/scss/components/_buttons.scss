@@ -15,13 +15,18 @@ button {
 .p-btn {
   @extend %buttons;
   &-primary {
-    background-color: #fff;
+    background-color: $white;
     color: var(--p-signup-color);
     border-color: var(--p-signup-color);
   }
   &-secondary {
-    background-color: #fff;
+    background-color: $white;
     color: var(--p-signin-color);
     border-color: var(--p-signin-color);
+  }
+  &-tertiary {
+    background-color: var(--p-sidebar-color);
+    color: $white;
+    border-color: var(--p-sidebar-color);
   }
 }

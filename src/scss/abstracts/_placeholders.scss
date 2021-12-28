@@ -37,3 +37,45 @@
   box-shadow: 2px 2px 10px rgba(0,0,0,.7);
   border-radius: 15px;
 }
+
+%menu-sidebar {
+  ul {
+    li {
+      margin: 1rem 0;
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      a {
+        display: flex;
+        align-items: center;
+        justify-self: space-between;
+        text-decoration: none;
+        &:hover {
+          span {
+            transition: ease .5s all;
+            background-color: $blue;
+          }
+        }
+        i, svg {
+          background-color: $blue;
+          width: 75px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: rgba($white, .3);
+        }
+        span {
+          color: rgba($white, .9);
+          font-weight: var(--p-font-bold);
+          margin-left: .5rem;
+          padding: 0 0 0 1rem;
+          height: 50px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

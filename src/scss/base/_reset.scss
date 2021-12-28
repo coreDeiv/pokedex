@@ -18,6 +18,22 @@ html {
   position: relative;
 }
 
+body {
+  &.session {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    aside { width: 20%;}
+    main { 
+      width: 80%;
+      padding: 2rem 2rem 0 3rem;
+      margin-left: 20%;
+      background-color: $gray-light;
+    }
+  }
+}
+
 main {
   &#main {
     &-precharge {

@@ -44,5 +44,5 @@ function login() {
     const user = users.find(user => user.trainerEmail === document.querySelector('#email-sesion').value);
     document.querySelector('#pokemon p span').innerHTML = user.trainerName;
   }
-
+  
 }

@@ -10,14 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel='shortcut icon' type='image/ico' href='./media/favicon/pokedex-favicon.ico'>
   </head>
-  <body>
+  <body class="session">
     
+    @@include('web/index/_sidebar.html')
+
     <main>
+      @@include('web/index/_header.html')
       @@include('web/partials/_card.html')
       @@include('web/partials/_paginator.html')
     </main>
-
-    @@include('web/partials/_template.html')
+    
     @@include('web/partials/_app.html')
     
     <script src="https://kit.fontawesome.com/f953dcffa0.js" crossorigin="anonymous"></script>

@@ -1,32 +1,42 @@
 :root {
 
   // Sizes
-  --p-container-stretched: 40%;
-  --p-half-measures: 50%;
+  --p-container-stretched:  40%;
+  --p-half-measures:        50%;
 
   // Colors
-  --p-signin-color: #c25de0;
-  --p-signin-color-hover: #a24cd8;
-  --p-signup-color: #f5565d;
-  --p-signup-color-hover: #f4445b;
-  --p-danger-color: rgba(196, 28, 28, 1);
-  --p-success-color: rgba(0, 128, 0, 1);
+  --p-signin-color:         #c25de0;
+  --p-signin-color-hover:   #a24cd8;
+  --p-signup-color:         #f5565d;
+  --p-signup-color-hover:   #f4445b;
+  --p-danger-color:         rgba(196, 28, 28, 1);
+  --p-success-color:        rgba(0, 128, 0, 1);
 
+  --p-sidebar-color:        #597dfc;
+  --p-session-color:        #f5f7fd;
 
   // Fonts
-  --p-poppins: 'Poppins', sans-serif, serif;
+  --p-poppins:              'Poppins', sans-serif, serif;
 
   // Font weights
-  --p-font-thin: 100;
-  --p-font-normal: 200;
-  --p-font-medium: 300;
-  --p-font-regular: 400;
-  --p-font-semi-bold: 500;
-  --p-font-bold: 600;
-  --p-font-extra-bold: 700;
-  --p-font-bolder: 800;
+  --p-font-thin:            100;
+  --p-font-normal:          200;
+  --p-font-medium:          300;
+  --p-font-regular:         400;
+  --p-font-semi-bold:       500;
+  --p-font-bold:            600;
+  --p-font-extra-bold:      700;
+  --p-font-bolder:          800;
 
 }
+
+// Colors
+$white:                   #fff        !default;
+$black:                   #000        !default;
+$gray-light:              #f5f7fd     !default;
+$red:                     #f5565d     !default;
+$green:                   #0f9d58     !default;
+$blue:                    #6a8afc     !default;
 
 // Breakpoints
 $breakpoints: (
