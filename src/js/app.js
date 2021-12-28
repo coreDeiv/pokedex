@@ -1,3 +1,5 @@
+"use-strict";
+
 // const fetchPokemonColor = async () => {
 //   try {
 //     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-color/${getRandomInt(1, 150)}`);

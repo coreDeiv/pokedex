@@ -2,6 +2,15 @@
 
   const pokemonCard = document.querySelector(".p-pg-row");
 
+  let offset = 1;
+  let limit = 7;
+
+  document.querySelector("#show-more").addEventListener("click", (e) => {
+    e.preventDefault();
+    offset += limit;
+    fetchPokemons(offset, limit);
+  });
+
   function fetchPokemon(id) {
     return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
       .then((response) => response.json())
@@ -13,9 +22,10 @@
       });
   }
 
-  function fetchPokemons(number) {
-    for (let i = 0; i < number; i++) {
+  function fetchPokemons(offset, limit) {
+    for (let i = offset; i <= offset + limit; i++) {
       fetchPokemon(i + 1).then((data) => {
+        console.log(data);
         const pokemonCardClone = pokemonCard.cloneNode(true);
         pokemonCardClone.querySelector(".p-pg-item_name").innerHTML = data.name;
         pokemonCardClone.querySelector(".p-pg-item_sprite > img").src = data.sprites.other.dream_world.front_default;
@@ -26,4 +36,4 @@
     }
   }
 
-  fetchPokemons(1118);</script>
+  fetchPokemons(offset, limit);</script>
