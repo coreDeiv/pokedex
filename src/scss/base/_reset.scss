@@ -30,6 +30,22 @@ body {
       padding: 2rem 2rem 0 3rem;
       margin-left: 20%;
       background-color: $gray-light;
+      @include mq(desk-sm) {
+        padding: 2rem 2rem 0 1rem;
+        margin-left: 25%;
+      }
+      @include mq(phone-xxl) {
+        padding: 2rem 0 0 0;
+        margin-left: 10%;
+      }
+    }
+    @include mq(desk-sm) {
+      aside { width: 25%;}
+      main { width: 75%;}
+    }
+    @include mq(phone-xxl) {
+      aside { width: 10%;}
+      main { width: 90%; }
     }
   }
 }

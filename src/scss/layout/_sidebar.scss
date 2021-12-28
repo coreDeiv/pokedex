@@ -5,6 +5,9 @@
     width: 100%;
     height: 100vh;
     padding: 2rem;
+    @include mq(phone-xxl) {
+      padding: 0;
+    }
     &_logo {
       max-width: 100%;
       text-align: center;
@@ -16,18 +19,34 @@
         text-decoration: none;
         img {
           padding: 0 .5rem;
-          &:first-child { width: 35%; }
+          @include mq(phone-xxl) {
+            padding: 0;
+          }
+          &:first-child { 
+            width: 35%; 
+            @include mq(phone-xxl) {
+              width: 50%;
+              margin: 1rem auto 0 auto;
+            }
+          }
           &:last-child { 
             width: 65%; 
             margin-bottom: 1rem;
+            @include mq(phone-xxl) {
+              display: none;
+            }
           }
         }
       }
     }
     &_search {
       margin: 2rem 0;
+      @include mq(phone-xxl) {
+        display: none;
+      }
       input {
         border: none;
+        min-width: 100% !important;
         &::placeholder {
           color: var(--p-sidebar-color);
           font-weight: var(--p-font-regular);
@@ -45,6 +64,10 @@
       position: absolute;
       bottom: 0;
       width: calc(100% - 4rem);
+      @include mq(phone-xxl) {
+        width: 100%;
+        margin: 0 auto;
+      }
       @extend %menu-sidebar;
       ul { margin-top: auto; }
     }
