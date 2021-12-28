@@ -1,23 +1,29 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Pokedex App</title><link rel="stylesheet" href="css/main.css"><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"><link rel="shortcut icon" type="image/ico" href="./media/favicon/pokedex-favicon.ico"></head><body><main><div id="pokemon-container" class="p-pg pokemon-grid"><div class="p-pg-container"><div class="p-pg-row"><div class="p-pg-item"><h1 class="p-pg-item_name"></h1><div id="p-pg-item_image" class="p-pg-item_sprite"><img src="" alt=""></div><p class="p-pg-item_type"></p><ul class="p-pg-item_abilities"></ul></div></div></div></div></main><template id="temp"><div class="pokem"><h1><span></span></h1><img src="" alt="" crossorigin="anonymous"><h2><span></span></h2><h3><span></span></h3></div></template><script>"use-strict";
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Pokedex App</title><link rel="stylesheet" href="css/main.css"><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"><link rel="shortcut icon" type="image/ico" href="./media/favicon/pokedex-favicon.ico"></head><body><main><div id="pokemon-container" class="p-pg pokemon-grid"><h1>Numero total de Pokemones existentes <span></span></h1><div class="p-pg-container"><div id="p-pg-row" class="p-pg-row"><div class="p-pg-item"><h1 class="p-pg-item_name"></h1><div id="p-pg-item_image" class="p-pg-item_sprite"><img src="" alt=""></div><p class="p-pg-item_type"></p><ul class="p-pg-item_abilities"></ul></div></div></div></div></main><template id="temp"><div class="pokem"><h1><span></span></h1><img src="" alt="" crossorigin="anonymous"><h2><span></span></h2><h3><span></span></h3></div></template><script>"use-strict";
 
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
+  const pokemonCard = document.querySelector(".p-pg-row");
+
+  function fetchPokemon(id) {
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+      .then((response) => response.json())
+      .then((data) => {
+        return data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  const fetchPokemon = async () => {
-    try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomInt(1, 150)}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.log(error);
+  function fetchPokemons(number) {
+    for (let i = 0; i < number; i++) {
+      fetchPokemon(i + 1).then((data) => {
+        const pokemonCardClone = pokemonCard.cloneNode(true);
+        pokemonCardClone.querySelector(".p-pg-item_name").innerHTML = data.name;
+        pokemonCardClone.querySelector(".p-pg-item_sprite > img").src = data.sprites.other.dream_world.front_default;
+        pokemonCardClone.querySelector(".p-pg-item_type").innerHTML = data.types[0].type.name;
+        pokemonCardClone.querySelector(".p-pg-item_abilities").innerHTML = data.abilities[0].ability.name;
+        pokemonCard.parentNode.appendChild(pokemonCardClone);
+      });
     }
   }
 
-  fetchPokemon().then(data => {
-    document.querySelector('#pokemon-container .p-pg-item_name').innerHTML = data.name;
-    document.querySelector('#pokemon-container .p-pg-item_sprite img').src = data.sprites.other.dream_world.front_default;
-    document.querySelector('#pokemon-container .p-pg-item_type').innerHTML = data.types.map(type => type.type.name).join(', ');
-    document.querySelector('#pokemon-container .p-pg-item_abilities').innerHTML = data.abilities.map(ability => `<li>${ability.ability.name}</li>`).join('');
-    console.log(data);
-  });</script><script src="https://kit.fontawesome.com/f953dcffa0.js" crossorigin="anonymous"></script></body></html>
+  fetchPokemons(1118);</script><script src="https://kit.fontawesome.com/f953dcffa0.js" crossorigin="anonymous"></script></body></html>
